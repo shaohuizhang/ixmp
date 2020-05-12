@@ -8,7 +8,7 @@ from .backend.jdbc import JDBCBackend
 from .core import IAMC_IDX, Platform, Scenario, TimeSeries
 from .model import MODELS
 from .model.base import ModelError
-from .model.dantzig import DantzigModel
+from .model.dantzig import DantzigGAMSModel, DantzigPyomoModel
 from .model.gams import GAMSModel
 from .reporting import Reporter
 from .utils import show_versions
@@ -40,7 +40,9 @@ MODELS.update(
     {
         "default": GAMSModel,
         "gams": GAMSModel,
-        "dantzig": DantzigModel,
+        "dantzig": DantzigGAMSModel,
+        "dantzig-gams": DantzigGAMSModel,
+        "dantzig-pyomo": DantzigPyomoModel,
     }
 )
 
